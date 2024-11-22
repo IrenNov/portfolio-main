@@ -1,0 +1,40 @@
+:root {
+    --color-dark: #1D111F;
+    --color-dark-alt: #203139;
+    --color-gray: #2D2B3B;
+    --color-light: #FFE4B2;
+    --color-light-text: #CEB992;
+    --color-dark-rgba: rgba(19, 12, 20, 0.5);
+    --color-bg-light: #DFCCA9;
+    --color-bg-light-rgba: rgba(223, 204, 169, 1);
+    --color-bg-light-rgb: rgb(223, 204, 169);
+    --color-accent-org: #CC5A2B;
+    --color-bg-gradient: radial-gradient(95.57% 89.64% at 65.57% 49.95%, rgb(88, 81, 100) 0%, rgb(45, 41, 54) 29.49712872505188%, rgb(26, 33, 44) 100%);
+    --color-bg-gradient2: radial-gradient(566.53% 171.01% at 70.96% 49.95%, rgb(68, 64, 77) 0%, rgb(34, 32, 38) 20.68762332201004%, rgb(32, 49, 57) 100%);
+    --color-text-gradient:  radial-gradient(402.58% 215.54% at 31.74% 169.72%, rgb(218, 178, 125) 4.500000178813934%, rgb(218, 178, 125) 25%, rgb(73, 128, 123) 27.500000596046448%, rgb(73, 128, 123) 36.000001430511475%, rgb(51, 47, 64) 42.500001192092896%, rgb(51, 47, 64) 51.499998569488525%, rgb(223, 134, 34) 56.117188930511475%, rgb(223, 134, 34) 89.99999761581421%, rgb(103, 53, 67) 100%);
+
+    --border: 1px solid var(--color-dark);
+    --border-radius: 14px;
+    --border-radius-small: 7px;
+    --border-radius-large: 45px;
+
+    --color-white: #fff;
+    --color-black: #000;
+
+    --shadow: 0 4px 15px var(--color-dark-rgba);
+    --shadow-inset: 
+    inset 0 12px 18px var(--color-dark),
+    inset 0 -12px 18px var(--color-dark);
+    --shadow-inset-vert: 
+    inset 12px 0 8px var(--color-dark);
+
+    --font-family-base: "Space Mono", sans-serif;
+    --font-family-second: "Anton", sans-serif;
+
+    --transition-duration: 0.2s;
+
+    --container-width: 1420px;
+    --container-padding-x: 20px;
+
+    --bg-angle: 0deg;
+}

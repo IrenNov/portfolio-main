@@ -1,0 +1,167 @@
+.sites {
+    height: 90%;
+    overflow-y: visible;
+    align-content: end;
+    padding-bottom: 5%;
+    @include mobile-s {
+        order: 2;
+    }
+
+    &__list {
+        width: 100%;
+        height: auto;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        margin-right: 10px;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        scroll-behavior: smooth;
+    }
+    &__item.dimmed {
+        opacity: 0.4;
+    }
+
+    &__item {
+        width: 100%;
+        max-height: 98vh;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        perspective: 10000px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        transform: scale(0.9);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        
+
+        img {
+            width: auto;
+            height: 100%;
+            margin: auto;
+            object-fit: cover;
+            filter: drop-shadow(0.1vw 1.74vw 10px var(--color-dark));
+            -webkit-box-reflect: below -6.34vw linear-gradient(180deg, rgba(42, 40, 56, 0) 88%, rgb(44, 42, 58) 97%);
+            transition: transform 0.1s ease-out;
+            transform-origin: center center;
+            transform-style: preserve-3d;
+
+            @include mobile-s {
+                -webkit-box-reflect: below -12.74vw linear-gradient(180deg, rgba(42, 40, 56, 0) 88%, rgb(44, 42, 58) 97%);
+
+                height: 70%;
+            }
+        }
+    }
+
+    &__link {
+        overflow: hidden;
+        position: absolute;
+        top: 7vw;
+        right: max(45px, 4vw);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: max(60px, 7.04vw);
+        z-index: 1;
+        aspect-ratio: 1;
+        padding: 1vw;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 0.45vw solid transparent;
+        transition: 0.2s ease;
+        background:
+            url(../image/pattern.png) padding-box,
+            conic-gradient(from var(--bg-angle),
+                #673543,
+                #DAB27D 10%,
+                #9DD9CB 30%,
+                #3B8381 50%,
+                #DF8622 70%,
+                #673543) border-box;
+        animation: spin 2.5s infinite linear;
+
+        @include mobile-s {
+            border-width: 3px;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+            border: 0.45vw solid #DF8622;
+
+            .stroke-path {
+                stroke: #DF8622;
+            }
+        }
+
+        .svg {
+            width: 80%;
+            height: auto;
+            animation: fly 3.5s 2s infinite ease-out;
+        }
+
+        .stroke-path {
+            stroke-width: max(5px, 0.3vw);
+            stroke: url(#paint0_radial_264_2196);
+        }
+
+    }
+}
+.sites__dots {
+    
+        z-index: 3;
+        padding: 0.6vw;
+        transform: translateX(-50%);
+        display: flex;
+        gap: max(8px, 0.95vw);
+        @include mobile-s {
+            order: 3;
+        }
+    }
+
+    .sites__dot {
+        box-sizing: border-box;
+        width: max(7px, 0.9vw);
+        aspect-ratio: 1;
+        background-color: var(--color-bg-light);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &--active {
+            background-color: var(--color-accent-org);
+        }
+    }
+@keyframes spin {
+    to {
+        --bg-angle: 360deg;
+    }
+}
+
+@property --bg-angle {
+    inherits: false;
+    initial-value: 0deg;
+    syntax: "<angle>";
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(-5vw, 5vw);
+    }
+
+    10% {
+        transform: translate(0);
+    }
+
+    80% {
+        transform: translate(0);
+    }
+
+    100% {
+
+        transform: translate(5vw, -5vw);
+
+    }
+}

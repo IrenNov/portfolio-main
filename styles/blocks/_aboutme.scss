@@ -1,0 +1,119 @@
+.aboutme {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-bg-light);
+
+    @include mobile {
+        padding-top: 9.67vw;
+    }
+
+    &__title-svg {
+
+        margin-top: 4.63vh;
+        margin-bottom: -6.63vh;
+
+        .stroke {
+            stroke: url(#paint0_radial_264_2194);
+            stroke-width: 14;
+        }
+
+        .fill {
+            fill: #dfcca9;
+            stroke: none;
+
+            .in-view {
+                opacity: 1;
+                transition: opacity 0.3s cubic-bezier(0.32, 0.15, 0.04, 1.03);
+            }
+
+            .out-of-view {
+                opacity: 0;
+                transition: opacity 10s cubic-bezier(0.32, 0.15, 0.04, 1.03);
+            }
+        }
+
+        .word-and {
+            transform: translateX(5.1em);
+        }
+
+        .word-th {
+            transform: translateX(7em);
+        }
+
+        @include mobile {
+            transform: scale(1.6) translateX(23%) translateY(-15%);
+
+            .word-th {
+                transform: translateY(5rem);
+            }
+        }
+
+    }
+
+    &__main {
+        display: flex;
+        justify-content: space-between;
+
+        @include mobile {
+            display: block;
+            margin-inline: auto;
+            width: max(285px, 29.14vw);
+        }
+    }
+
+    &__img {
+        width: max(355px, 37.4vw);
+    }
+
+    &__content {
+        width: 29.14vw;
+        color: var(--color-dark);
+        padding-top: 4.58vh;
+
+        @include mobile {
+            width: 100%;
+            margin-bottom: 5vw;
+        }
+
+        h2 {
+            line-height: 108%;
+            text-transform: uppercase;
+            z-index: 1;
+            padding-bottom: 2vw;
+        }
+
+        p {
+            line-height: 133%;
+            text-transform: lowercase;
+            color: var(--color-dark-rgba);
+            @include fluid-text(24, 14);
+
+            @include tablet {
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                cursor: pointer;
+            }
+
+            &.expanded {
+                display: block;
+                -webkit-line-clamp: unset;
+                overflow: scroll;
+                height: max(93px, 11.85vw);
+            }
+        }
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: var(--color-light-text);
+        /* Цвет фона трека */
+
+    }
+
+    /* Стили для бегунка */
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-dark-rgba);
+    }
+
+}

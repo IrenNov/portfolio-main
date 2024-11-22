@@ -1,0 +1,32 @@
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dark);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+    transition: opacity 1.5s ease 0.5s;
+
+    &__container {
+        position: relative;
+        
+        display: grid;
+        grid-template-areas: "stack";
+        align-items: center;
+        justify-items: center;
+        width: 400px;
+        height: auto;
+    }
+
+    &__svg {
+        scale: 0.4;
+        grid-area: stack;
+        
+    }
+}

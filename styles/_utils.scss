@@ -1,0 +1,59 @@
+.container {
+  margin-inline: auto;
+  height: auto;
+
+  &__section {
+    width: max(250px, 79.17vw);
+  }
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}
+
+.head-foot {
+  background-color: rgba(34, 32, 38, 0.5);
+  backdrop-filter: blur(30px);
+  box-shadow: var(--shadow);
+  padding-top: 2.08vw;
+  padding-bottom: 1.04vw;
+}
+
+.dark {
+  background: url(../image/paper-6-3.jpg) repeat, var(--color-bg-gradient);
+  background-blend-mode: multiply;
+  box-shadow: var(--shadow-inset);
+  background-attachment: fixed;
+  height: min(51.2vw, 950px);
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--color-dark-rgba);
+  }
+  @include tablet {
+    height: min(91.2vh, 550px);
+  }
+
+}
+.scroll-marg {
+    position: absolute;
+    top: -6vw;
+    left: 0;
+  @include mobile {
+    top: -25vw;
+  }
+   }
+
+  
+
